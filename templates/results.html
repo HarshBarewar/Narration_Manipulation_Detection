@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="analyzer-wrap">
+  <div class="panel glass">
+    <p class="kicker">Step 2</p>
+    <h1>Manipulation Analysis Output</h1>
+    <p>Detailed narrative risk and category-level evidence.</p>
+    <div id="riskBadge" class="risk"></div>
+  </div>
+
+  <div class="result-visual-grid">
+    <div class="panel glass risk-meter-panel">
+      <h2>Manipulation Risk Meter</h2>
+      <div class="speedometer risk-speedometer">
+        <div class="gauge-ring"></div>
+        <div class="gauge-fill" id="riskGaugeFill"></div>
+        <div class="gauge-center">
+          <div id="riskGaugeValue" class="gauge-value">--%</div>
+          <div class="gauge-label">Risk Score</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel glass signal-panel">
+      <h2>Signal Diagram</h2>
+      <p class="status">Category scores vs thresholds</p>
+      <div id="signalBars" class="signal-bars"></div>
+    </div>
+  </div>
+
+  <div class="panel glass result-panel" id="resultPanel" hidden>
+    <h2>Detected Manipulative Signals</h2>
+    <div id="categoryGrid" class="category-grid"></div>
+  </div>
+
+  <div class="panel glass" id="resultError" hidden>
+    <h3>Unable to analyze</h3>
+    <p id="resultErrorText" class="status"></p>
+    <a href="{{ url_for('analyze_page') }}" class="btn btn-primary">Return to Input</a>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+{% endblock %}

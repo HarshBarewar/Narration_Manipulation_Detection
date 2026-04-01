@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero startup-hero">
+  <div class="hero-card glass">
+    <p class="kicker">Narrative Risk Intelligence Platform</p>
+    <h1>Spot manipulative narratives before they become public belief.</h1>
+    <p>
+      A startup-ready intelligence layer for newsroom teams, policy analysts, and trust-and-safety operations.
+      Detect manipulative framing, political pressure, religious coercion, and anti-constitutional rhetoric in seconds.
+    </p>
+    <div class="hero-actions">
+      <a href="{{ url_for('analyze_page') }}" class="btn btn-primary">Start Narrative Check</a>
+      <a href="{{ url_for('accuracy_page') }}" class="btn btn-ghost">View Model Accuracy</a>
+    </div>
+  </div>
+
+  <aside class="hero-insight glass">
+    <h3>Live Capabilities</h3>
+    <ul class="clean-list">
+      <li>Sentence-level explainability with evidence lines</li>
+      <li>Hybrid scoring: ML confidence + keyword cues</li>
+      <li>Multi-category risk view with calibrated thresholds</li>
+    </ul>
+    <div class="pulse-row">
+      <span class="pulse-dot"></span>
+      <span>Monitoring persuasion and rhetoric patterns in real time</span>
+    </div>
+  </aside>
+</section>
+
+<section class="feature-grid">
+  <article class="feature feature-tall">
+    <h3>For Modern Media Teams</h3>
+    <p>Review large volumes of content quickly and escalate high-risk narrative manipulation with evidence-backed insights.</p>
+  </article>
+  <article class="feature">
+    <h3>Transparent Outputs</h3>
+    <p>Each flagged category includes confidence, rationale, and matched language indicators for audit-ready workflows.</p>
+  </article>
+  <article class="feature">
+    <h3>Built for Iteration</h3>
+    <p>Track model metrics, tune thresholds, and improve performance as new real-world examples are added.</p>
+  </article>
+</section>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="analyzer-wrap">
+  <div class="panel glass">
+    <p class="kicker">Step 1</p>
+    <h1>Narration Input</h1>
+    <p>Paste narration/article text and move to the analysis output page.</p>
+
+    <label for="articleInput">Narration text</label>
+    <textarea id="articleInput" placeholder="Paste narration content here..."></textarea>
+
+    <div class="hero-actions">
+      <button id="analyzeBtn" class="btn btn-primary">Check Narration</button>
+      <a href="{{ url_for('home') }}" class="btn btn-ghost">Back Home</a>
+    </div>
+    <p id="status" class="status"></p>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+{% endblock %}

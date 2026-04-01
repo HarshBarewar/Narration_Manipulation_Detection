@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="accuracy-wrap">
+  <div class="panel glass accuracy-head">
+    <p class="kicker">Model Performance</p>
+    <h1>Accuracy Dashboard</h1>
+    <p>Real-time training metrics displayed in a speedometer-style visual.</p>
+  </div>
+
+  <div class="panel glass speedometer-panel">
+    <div class="speedometer" id="speedometer">
+      <div class="gauge-ring"></div>
+      <div class="gauge-fill" id="gaugeFill"></div>
+      <div class="gauge-center">
+        <div id="gaugeValue" class="gauge-value">--%</div>
+        <div class="gauge-label">Macro Accuracy</div>
+      </div>
+    </div>
+    <div id="metricSummary" class="metric-summary">Loading metrics...</div>
+  </div>
+
+  <div class="panel glass" id="metricsDetails">
+    <h2>Detailed Model Stats</h2>
+    <div id="metricsGrid" class="category-grid"></div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+{% endblock %}
